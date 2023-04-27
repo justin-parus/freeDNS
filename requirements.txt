@@ -1,0 +1,5 @@
+requests==2.29.0
+apscheduler==3.10.1
+discordwebhook==1.0.3
+ruff==0.0.261
+pre-commit==3.2.2

@@ -1,0 +1,11 @@
+[Unit]
+Description=freeDNS
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /replace/this/path/to/main.py --your-params
+
+[Install]
+WantedBy=multi-user.target

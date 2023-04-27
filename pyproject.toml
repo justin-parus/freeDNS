@@ -1,0 +1,10 @@
+[project]
+name = "freeDNS"
+version = "0.0.1"
+requires-python = ">=3"
+
+dependencies = [
+    "requests==2.29.0",
+    "apscheduler==3.10.1",
+    "discordwebhook-1.0.3",
+]

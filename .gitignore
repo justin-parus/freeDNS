@@ -1,0 +1,4 @@
+*.swp
+__*
+.DS_Store
+venv
