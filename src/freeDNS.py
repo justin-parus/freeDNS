@@ -28,7 +28,8 @@ class FreeDNS:
     def update(self):
         ip = self.check_ip()
         if ip:
-            if self.webhook: self.webhook_ip(ip)
+            if self.webhook:
+                self.webhook_ip(ip)
             if (
                     self.email_addr and
                     self.mail_server and
