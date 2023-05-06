@@ -31,3 +31,6 @@ sudo systemctl start freeDNS.service
 ### using gmail
 See [App Passwords](https://support.google.com/accounts/answer/185833?visit_id=638181578541975944-1342201244&p=InvalidSecondFactor&rd=1)
 set up your own [here](https://myaccount.google.com/apppasswords).
+
+## todo
+ - add support for DNS record updates

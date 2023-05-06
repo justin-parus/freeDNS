@@ -20,8 +20,12 @@ if __name__ == "__main__":
                         help="modern smpt requires trust, you need an account to send email")
     parser.add_argument("--email-server", "-s", type=str, default="smtp.gmail.com:587",
                         help="limit number of processed files. useful for debugging")
-    parser.add_argument("--interval-seconds", "-t", type=int, default=300,
+    parser.add_argument("--interval-seconds", "-i", type=int, default=300,
                         help="specify number of seconds to check ip")
+    parser.add_argument("--fail-tolerance", "-f", type=int, default=0,
+                        help="specify number of failures to tolerate before sending update")
+    parser.add_argument("--timeout", "-t", type=int, default=10,
+                        help="number of seconds to wait before failing individual request")
 
     args = parser.parse_args()
 
@@ -30,7 +34,9 @@ if __name__ == "__main__":
                     email_addr=args.email_address,
                     username=args.email_user,
                     password=args.email_password,
-                    mail_server=args.email_server)
+                    mail_server=args.email_server,
+                    fail_tolerance=args.fail_tolerance,
+                    timeout=args.timeout)
 
     scheduler = BlockingScheduler()
     scheduler.add_job(dns.update, "interval", seconds=args.interval_seconds)
